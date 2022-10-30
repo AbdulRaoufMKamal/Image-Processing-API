@@ -8,8 +8,8 @@
     "test": "npm run build && npm run jasmine",
     "build": "npx tsc",
     "jasmine": "jasmine",
-    "lint": "eslint 'src/**/*.ts'",
-    "prettier": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "lint": "eslint \"src/**/*.ts\"",
+    "prettier": "prettier --config .prettierrc \"./src/**/*.ts\" --write"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +28,7 @@
     "@types/node": "^18.11.8",
     "@types/sharp": "^0.31.0",
     "@types/supertest": "^2.0.12",
+    "@typescript-eslint/parser": "^5.41.0",
     "eslint": "^8.26.0",
     "eslint-plugin-prettier": "^4.2.1",
     "nodemon": "^2.0.20",

@@ -60,6 +60,7 @@ class Image {
       .resize({
         width: widthNum,
         height: heightNum,
+        fit: 'fill',
       })
       .toFile(imagePath)
       .then(() => {
