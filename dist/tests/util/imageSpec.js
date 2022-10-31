@@ -10,5 +10,5 @@ it('creates an image with requested width and height in the thumb directory', ()
     const image = new image_1.default(300, 400, 'icelandwaterfall');
     image.resizeImage('550', '550', 'icelandwaterfall');
     const newImagePath = path_1.default.resolve('./assets/thumb/icelandwaterfall_550_550.jpg');
-    expect(fs_1.default.existsSync(newImagePath)).toBeTruthy();
+    setTimeout(() => expect(fs_1.default.existsSync(newImagePath)).toBeTruthy(), 2000);
 });

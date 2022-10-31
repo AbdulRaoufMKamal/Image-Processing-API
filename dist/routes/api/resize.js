@@ -18,16 +18,15 @@ const path_1 = __importDefault(require("path"));
 const image_1 = __importDefault(require("../../util/image"));
 const resize = express_1.default.Router();
 resize.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const query = req.query;
-    const isValidData = /^\d+$/.test(query.width) && /^\d+$/.test(query.height);
+    const isValidData = /^\d+$/.test(req.query.width) && /^\d+$/.test(req.query.height);
     if (!isValidData) {
         res.send('Invalid data entered');
         return;
     }
     const image = new image_1.default();
-    const promise = image.resizeImage(query.width, query.height, query.name);
+    const promise = image.resizeImage(req.query.width, req.query.height, req.query.name);
     promise.then(() => {
-        const imagePath = path_1.default.resolve(`./assets/thumb/${query.name}_${query.width}_${query.height}.jpg`);
+        const imagePath = path_1.default.resolve(`./assets/thumb/${req.query.name}_${req.query.width}_${req.query.height}.jpg`);
         if (fs_1.default.existsSync(imagePath))
             res.status(200).sendFile(path_1.default.resolve(imagePath));
         else

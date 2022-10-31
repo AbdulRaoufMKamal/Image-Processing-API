@@ -13,4 +13,4 @@
 >> `node dist/src/.`
 
 ## URL:
-`http://localhost:3000?width='input width'&height='input_height'&name='input_file_name(without extension)'`
+`http://localhost:3000/api/images?width='input width'&height='input_height'&name='input_file_name(without extension)'`

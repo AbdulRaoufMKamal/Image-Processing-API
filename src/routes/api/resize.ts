@@ -1,28 +1,27 @@
-import express from 'express'
+import express, {Request, Response, Router} from 'express'
 import fs from 'fs'
 import path from 'path'
 import Image from '../../util/image'
 
-const resize = express.Router()
+const resize: Router = express.Router()
 
-resize.get('/', async (req, res) => {
-  const query = req.query
-  const isValidData =
-    /^\d+$/.test(query.width as string) && /^\d+$/.test(query.height as string)
+resize.get('/', async (req: Request, res: Response) => {
+  const isValidData: boolean =
+    /^\d+$/.test(req.query.width as string) && /^\d+$/.test(req.query.height as string)
   if (!isValidData) {
     res.send('Invalid data entered')
     return
   }
   const image: Image = new Image()
-  const promise = image.resizeImage(
-    query.width as string,
-    query.height as string,
-    query.name as string
+  const promise: Promise<void> = image.resizeImage(
+    req.query.width as string,
+    req.query.height as string,
+    req.query.name as string
   )
   promise.then(() => {
     const imagePath = path.resolve(
-      `./assets/thumb/${query.name as string}_${query.width as string}_${
-        query.height as string
+      `./assets/thumb/${req.query.name as string}_${req.query.width as string}_${
+        req.query.height as string
       }.jpg`
     )
     if (fs.existsSync(imagePath))

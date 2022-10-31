@@ -12,7 +12,7 @@ describe('Test endpoint responses', () => {
     expect(response.status).toBe(200)
   }),
     it('creates an image with the width and height requested', async () => {
-      const [fileName, width, height] = ['fjord', 450, 300]
+      const [fileName, width, height] = ['fjord', 750, 340]
       await request.get(
         `/api/images?width=${width}&height=${height}&name=${fileName}`
       )

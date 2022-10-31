@@ -23,7 +23,7 @@ describe('Test endpoint responses', () => {
         expect(response.status).toBe(200);
     })),
         it('creates an image with the width and height requested', () => __awaiter(void 0, void 0, void 0, function* () {
-            const [fileName, width, height] = ['fjord', 450, 300];
+            const [fileName, width, height] = ['fjord', 750, 340];
             yield request.get(`/api/images?width=${width}&height=${height}&name=${fileName}`);
             expect(fs_1.default.existsSync(path_1.default.resolve(`./assets/thumb/${fileName}_${width}_${height}.jpg`))).toBeTruthy();
         }));
