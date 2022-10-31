@@ -8,5 +8,5 @@ it('creates an image with requested width and height in the thumb directory', ()
   const newImagePath = path.resolve(
     './assets/thumb/icelandwaterfall_550_550.jpg'
   )
-  setTimeout(() => expect(fs.existsSync(newImagePath)).toBeTruthy(),2000)
+  setTimeout(() => expect(fs.existsSync(newImagePath)).toBeTruthy(), 2000)
 })
