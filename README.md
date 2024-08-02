@@ -2,6 +2,9 @@
 First change directory to the image processing api
 `cd "Image-Processing-API"`
 ## Scripts:
+Install node modules:
+`npm install`
+
 Build:
 `npm run build`
 
