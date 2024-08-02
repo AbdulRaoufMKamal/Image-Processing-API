@@ -19,7 +19,7 @@ resize.get('/', async (req: Request, res: Response) => {
     req.query.height as string,
     req.query.name as string
   )
-  promise.then(() => {
+  .then(() => {
     const imagePath = path.resolve(
       `./assets/thumb/${req.query.name as string}_${
         req.query.width as string
